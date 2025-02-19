@@ -34,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orange,
         title: Center(
           child: Text(
             "Task 1",
@@ -46,25 +47,26 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         leading: Icon(Icons.menu),
         actions: [
+          Text('hi'),
+          SizedBox(width: 15),
           Icon(Icons.search),
-          SizedBox(width: 10),
-          //SizedBox(),
-          Icon(Icons.settings),
+
+          SizedBox(width: 15),
         ],
       ),
 
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Hello World',
-              style: TextStyle(fontSize: 44, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20),
-            Icon(Icons.celebration),
-          ],
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(child: Text("Welcome", style: TextStyle(fontSize: 30))),
+          Spacer(),
+          Text('my name is Mohanned ', style: TextStyle(fontSize: 30)),
+          Spacer(),
+          Text('my age  is  ', style: TextStyle(fontSize: 30)),
+          Text('22', style: TextStyle(fontSize: 30)),
+          Spacer(),
+          Center(child: Text("Buy", style: TextStyle(fontSize: 35))),
+        ],
       ),
     );
   }
