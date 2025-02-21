@@ -33,39 +33,282 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: Center(
-          child: Text(
-            "Task 1",
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
-            ),
+        centerTitle: true,
+        title: Text(
+          "Today tasks",
+          style: TextStyle(
+            fontSize: 22,
+            //  fontWeight: FontWeight.bold,
+            // color: Colors.blue,
           ),
         ),
-        leading: Icon(Icons.menu),
+        leading: Icon(Icons.arrow_back_ios),
         actions: [
-          Text('hi'),
-          SizedBox(width: 15),
-          Icon(Icons.search),
+          Container(
+            width: 60,
+            height: 25,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 8, 255, 185),
+              borderRadius: BorderRadius.circular(15),
+            ),
 
-          SizedBox(width: 15),
+            child: Row(children: [Icon(Icons.add), Text("Add")]),
+          ),
+          SizedBox(width: 20),
         ],
       ),
-
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(child: Text("Welcome", style: TextStyle(fontSize: 30))),
-          Spacer(),
-          Text('my name is Mohanned ', style: TextStyle(fontSize: 30)),
-          Spacer(),
-          Text('my age  is  ', style: TextStyle(fontSize: 30)),
-          Text('22', style: TextStyle(fontSize: 30)),
-          Spacer(),
-          Center(child: Text("Buy", style: TextStyle(fontSize: 35))),
+          SizedBox(height: 20),
+          Row(
+            children: [
+              Container(
+                width: 75,
+                height: 30,
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                margin: EdgeInsets.only(left: 25),
+
+                child: Center(child: Text("All")),
+              ),
+              Container(
+                width: 75,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(),
+                ),
+                margin: EdgeInsets.only(left: 10),
+
+                child: Center(child: Text("Future")),
+              ),
+              Container(
+                width: 75,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(),
+                ),
+                margin: EdgeInsets.only(left: 10),
+
+                child: Center(child: Text("Missed")),
+              ),
+              Container(
+                width: 75,
+                height: 30,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border.all(),
+                ),
+                margin: EdgeInsets.only(left: 10),
+
+                child: Center(child: Text("Done")),
+              ),
+            ],
+          ),
+          SizedBox(height: 25),
+          Row(
+            children: [
+              SizedBox(width: 15),
+              Text('Results'),
+              SizedBox(width: 25),
+              Container(
+                width: 20,
+                height: 20,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color.fromARGB(255, 8, 255, 185),
+                ),
+
+                child: Center(
+                  child: Text(
+                    "5",
+                    style: TextStyle(color: Color.fromARGB(255, 30, 141, 110)),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 25),
+          Container(
+            padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(136, 218, 206, 206),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            margin: EdgeInsets.only(bottom: 10),
+            width: 350,
+            height: 90,
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.work),
+                    Text('  Work task'),
+                    Spacer(),
+                    Container(
+                      width: 60,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white,
+                      ),
+                      margin: EdgeInsets.all(10),
+                      child: Center(child: Text("Future")),
+                    ),
+                  ],
+                ),
+                Text('Go to supermarket to buy some  milk & '),
+                Text('eggs'),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(136, 218, 206, 206),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            margin: EdgeInsets.only(bottom: 10),
+            width: 350,
+            height: 90,
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.work),
+                    Text('  Work task'),
+                    Spacer(),
+                    Container(
+                      width: 60,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green,
+                      ),
+                      margin: EdgeInsets.all(10),
+                      child: Center(child: Text("Done")),
+                    ),
+                  ],
+                ),
+                Text('Go to supermarket to buy some  milk & '),
+                Text('eggs'),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(136, 218, 206, 206),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            margin: EdgeInsets.only(bottom: 10),
+            width: 350,
+            height: 90,
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.home),
+                    Text('  Home task'),
+                    Spacer(),
+                    Container(
+                      width: 60,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green,
+                      ),
+                      margin: EdgeInsets.all(10),
+                      child: Center(child: Text("Done")),
+                    ),
+                  ],
+                ),
+                Text('Add new  feature for Do It app and '),
+                Text('commit it'),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(136, 218, 206, 206),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            margin: EdgeInsets.only(bottom: 10),
+            width: 350,
+            height: 90,
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.contact_page),
+                    Text('  personal task'),
+                    Spacer(),
+                    Container(
+                      width: 90,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color.fromARGB(255, 8, 255, 185),
+                      ),
+                      margin: EdgeInsets.all(10),
+                      child: Center(child: Text(" In Progress")),
+                    ),
+                  ],
+                ),
+                Text('Improve my English skills by trying to '),
+                Text('speek'),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(136, 218, 206, 206),
+              borderRadius: BorderRadius.circular(15),
+            ),
+            margin: EdgeInsets.only(bottom: 10),
+            width: 350,
+            height: 90,
+
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Icon(Icons.home),
+                    Text('  Home task'),
+                    Spacer(),
+                    Container(
+                      width: 60,
+                      height: 20,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.green,
+                      ),
+                      margin: EdgeInsets.all(10),
+                      child: Center(child: Text("Done")),
+                    ),
+                  ],
+                ),
+                Text('Add new  feature for Do It app and '),
+                Text('commit it'),
+              ],
+            ),
+          ),
         ],
       ),
     );
