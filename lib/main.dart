@@ -1,4 +1,7 @@
+import 'package:first_nti_project/assetsicons.dart';
+import 'package:first_nti_project/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +17,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'First UI',
       theme: ThemeData(
+        scaffoldBackgroundColor: MyColors.backgroundColor,
+        appBarTheme: AppBarTheme(backgroundColor: MyColors.backgroundColor),
+        fontFamily: 'Lexend Deca',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'First UI in NTI'),
+      home: const MyHomePage(title: "task"),
     );
   }
 }
@@ -33,28 +39,38 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           "Today tasks",
           style: TextStyle(
-            fontSize: 22,
+            fontWeight: FontWeight.w300,
+
+            //  color: Color(0x0ff24252),
+            fontSize: 19,
             //  fontWeight: FontWeight.bold,
             // color: Colors.blue,
           ),
         ),
-        leading: Icon(Icons.arrow_back_ios),
+        leading: SvgPicture.asset(AssetsIcons.arrowback),
         actions: [
           Container(
             width: 60,
             height: 25,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 8, 255, 185),
+              color: Color(0xffCEEBDC),
               borderRadius: BorderRadius.circular(15),
             ),
 
-            child: Row(children: [Icon(Icons.add), Text("Add")]),
+            child: Center(
+              child: Row(
+                children: [
+                  Text("  "),
+                  SvgPicture.asset(AssetsIcons.plus),
+                  Text(" Add"),
+                ],
+              ),
+            ),
           ),
           SizedBox(width: 20),
         ],
@@ -121,14 +137,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 20,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 8, 255, 185),
+                  color: Color(0xffCEEBDC),
                 ),
 
                 child: Center(
-                  child: Text(
-                    "5",
-                    style: TextStyle(color: Color.fromARGB(255, 30, 141, 110)),
-                  ),
+                  child: Text("5", style: TextStyle(color: Colors.green)),
                 ),
               ),
             ],
@@ -137,7 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(136, 218, 206, 206),
+              color: Color(0xffFFFFFF),
+
               borderRadius: BorderRadius.circular(15),
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -149,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.work),
+                    SvgPicture.asset(AssetsIcons.work),
                     Text('  Work task'),
                     Spacer(),
                     Container(
@@ -157,7 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 20,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.white,
+                        color: const Color.fromARGB(255, 239, 235, 235),
                       ),
                       margin: EdgeInsets.all(10),
                       child: Center(child: Text("Future")),
@@ -172,7 +186,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(136, 218, 206, 206),
+              color: Color(0xffFFFFFF),
               borderRadius: BorderRadius.circular(15),
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -184,7 +198,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.work),
+                    SvgPicture.asset(AssetsIcons.work),
                     Text('  Work task'),
                     Spacer(),
                     Container(
@@ -207,7 +221,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(136, 218, 206, 206),
+              color: Color(0xffFFFFFF),
               borderRadius: BorderRadius.circular(15),
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -219,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.home),
+                    SvgPicture.asset(AssetsIcons.home),
                     Text('  Home task'),
                     Spacer(),
                     Container(
@@ -242,7 +256,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(136, 218, 206, 206),
+              color: Color(0xffFFFFFF),
               borderRadius: BorderRadius.circular(15),
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -254,15 +268,15 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.contact_page),
+                    SvgPicture.asset(AssetsIcons.contact),
                     Text('  personal task'),
                     Spacer(),
                     Container(
-                      width: 90,
+                      width: 100,
                       height: 20,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: const Color.fromARGB(255, 8, 255, 185),
+                        color: Color(0xffCEEBDC),
                       ),
                       margin: EdgeInsets.all(10),
                       child: Center(child: Text(" In Progress")),
@@ -277,7 +291,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Container(
             padding: EdgeInsets.only(top: 1, left: 7, bottom: 2, right: 4),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(136, 218, 206, 206),
+              color: Color(0xffFFFFFF),
               borderRadius: BorderRadius.circular(15),
             ),
             margin: EdgeInsets.only(bottom: 10),
@@ -289,7 +303,7 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.home),
+                    SvgPicture.asset(AssetsIcons.home),
                     Text('  Home task'),
                     Spacer(),
                     Container(
