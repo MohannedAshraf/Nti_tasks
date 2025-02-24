@@ -1,11 +1,12 @@
 class AssetsIcons {
-  static const String arrowback = "assets/icons/Arrow.svg";
-  static const String contact = "assets/icons/Contact.svg";
-  static const String home = "assets/icons/Home.svg";
-  static const String plus = "assets/icons/Plus_Add.svg";
-  static const String work = "assets/icons/Work_Task.svg";
-  static const String calender = "assets/icons/calendar.svg";
-  static const String home2 = "assets/icons/home2.svg";
-  static const String vector = "assets/icons/Vector.svg";
-  static const String group = "assets/icons/Group 1000002766.svg";
+  static const String baseiconpass = "assets/icons/";
+  static const String arrowback = "${baseiconpass}Arrow.svg";
+  static const String contact = "${baseiconpass}Contact.svg";
+  static const String home = "${baseiconpass}Home.svg";
+  static const String plus = "${baseiconpass}Plus_Add.svg";
+  static const String work = "${baseiconpass}Work_Task.svg";
+  static const String calender = "${baseiconpass}calendar.svg";
+  static const String home2 = "${baseiconpass}home2.svg";
+  static const String vector = "${baseiconpass}Vector.svg";
+  static const String group = "${baseiconpass}Group 1000002766.svg";
 }

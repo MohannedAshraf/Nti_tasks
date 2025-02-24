@@ -1,5 +1,6 @@
 import 'package:first_nti_project/assetsicons.dart';
 import 'package:first_nti_project/colors.dart';
+import 'package:first_nti_project/defaultextform.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -362,106 +363,35 @@ class EditTask extends StatelessWidget {
             Text("    In progress"),
             Text("    Believe you can, and you're halfway there."),
 
-            Container(
-              margin: EdgeInsets.all(20),
-              width: 350,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.white),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  icon: SvgPicture.asset(AssetsIcons.home2),
-                  labelText: "Task group",
-                  border: InputBorder.none,
-                ),
-              ),
+            DefaulTextform(
+              labelText: 'Task Group',
+              icon: SvgPicture.asset(AssetsIcons.home2),
             ),
-            Container(
-              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-              width: 350,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.white),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Task Name",
-                  border: InputBorder.none,
-                ),
-              ),
+            DefaulTextform(labelText: 'Task Name'),
+            DefaulTextform(
+              labelText: 'describtion',
+              height: 100,
+              maxLines: null,
             ),
-            Container(
-              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-              width: 350,
-              height: 120,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.white),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: TextFormField(
-                maxLines: null,
+            DefaulTextform(
+              labelText: 'Start Date',
+              icon: SvgPicture.asset(AssetsIcons.calender),
+            ),
+            DefaulTextform(
+              labelText: 'End Date',
+              icon: SvgPicture.asset(AssetsIcons.calender),
+            ),
 
-                decoration: InputDecoration(
-                  labelText: "Describtion",
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-              width: 350,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.white),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  icon: SvgPicture.asset(AssetsIcons.calender),
-                  labelText: "Start Date",
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-              width: 350,
-              height: 60,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(color: Colors.white),
-              ),
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  icon: SvgPicture.asset(AssetsIcons.calender),
-                  labelText: "End Date",
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
             Container(
               margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(350, 24),
-                  backgroundColor: Color(0xff149954),
-                  foregroundColor: const Color.fromARGB(255, 221, 132, 132),
+                  backgroundColor: MyColors.green,
+                  foregroundColor: MyColors.forground,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),
-                    side: BorderSide(width: 2, color: Color(0xff149954)),
+                    side: BorderSide(width: 2, color: MyColors.green),
                   ),
                 ),
                 onPressed: () {},
@@ -470,7 +400,7 @@ class EditTask extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.w300,
-                    color: Color(0xffFFFFFF),
+                    color: MyColors.white,
                   ),
                 ),
               ),
@@ -484,7 +414,7 @@ class EditTask extends StatelessWidget {
                   foregroundColor: const Color.fromARGB(255, 221, 132, 132),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(14),
-                    side: BorderSide(width: 2, color: Color(0xff149954)),
+                    side: BorderSide(width: 2, color: MyColors.green),
                   ),
                 ),
                 onPressed: () {},
@@ -493,7 +423,7 @@ class EditTask extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.w300,
-                    color: Color(0xff149954),
+                    color: MyColors.green,
                   ),
                 ),
               ),
