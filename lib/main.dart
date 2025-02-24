@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lexend Deca',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: "task"),
+      home: const EditTask(),
     );
   }
 }
@@ -43,14 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: Text(
           "Today tasks",
-          style: TextStyle(
-            fontWeight: FontWeight.w300,
-
-            //  color: Color(0x0ff24252),
-            fontSize: 19,
-            //  fontWeight: FontWeight.bold,
-            // color: Colors.blue,
-          ),
+          style: TextStyle(fontWeight: FontWeight.w300, fontSize: 19),
         ),
         leading: SvgPicture.asset(AssetsIcons.arrowback),
         actions: [
@@ -324,6 +317,189 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class EditTask extends StatelessWidget {
+  const EditTask({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: MyColors.backgroundColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          "Edit tasks",
+          style: TextStyle(fontWeight: FontWeight.w300, fontSize: 19),
+        ),
+        leading: SvgPicture.asset(AssetsIcons.arrowback),
+        actions: [
+          Container(
+            margin: EdgeInsets.only(right: 20),
+            width: 80,
+            height: 28,
+            decoration: BoxDecoration(
+              color: MyColors.red,
+              borderRadius: BorderRadius.circular(15),
+            ),
+
+            child: Center(
+              child: Row(
+                children: [Text("  "), SvgPicture.asset(AssetsIcons.group)],
+              ),
+            ),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 30),
+            Text("    In progress"),
+            Text("    Believe you can, and you're halfway there."),
+
+            Container(
+              margin: EdgeInsets.all(20),
+              width: 350,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: Colors.white),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  icon: SvgPicture.asset(AssetsIcons.home2),
+                  labelText: "Task group",
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+              width: 350,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: Colors.white),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Task Name",
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+              width: 350,
+              height: 120,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: Colors.white),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: TextFormField(
+                maxLines: null,
+
+                decoration: InputDecoration(
+                  labelText: "Describtion",
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+              width: 350,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: Colors.white),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  icon: SvgPicture.asset(AssetsIcons.calender),
+                  labelText: "Start Date",
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+              width: 350,
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(color: Colors.white),
+              ),
+              padding: EdgeInsets.symmetric(horizontal: 10),
+              child: TextFormField(
+                decoration: InputDecoration(
+                  icon: SvgPicture.asset(AssetsIcons.calender),
+                  labelText: "End Date",
+                  border: InputBorder.none,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(350, 24),
+                  backgroundColor: Color(0xff149954),
+                  foregroundColor: const Color.fromARGB(255, 221, 132, 132),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    side: BorderSide(width: 2, color: Color(0xff149954)),
+                  ),
+                ),
+                onPressed: () {},
+                child: Text(
+                  "Mark as Done",
+                  style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xffFFFFFF),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(400, 24),
+                  backgroundColor: Color(0xffFFFFFF),
+                  foregroundColor: const Color.fromARGB(255, 221, 132, 132),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14),
+                    side: BorderSide(width: 2, color: Color(0xff149954)),
+                  ),
+                ),
+                onPressed: () {},
+                child: Text(
+                  "UPDATE",
+                  style: TextStyle(
+                    fontSize: 19,
+                    fontWeight: FontWeight.w300,
+                    color: Color(0xff149954),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
