@@ -1,6 +1,6 @@
 import 'package:first_nti_project/assetsicons.dart';
 import 'package:first_nti_project/colors.dart';
-import 'package:first_nti_project/defaultextform.dart';
+import 'package:first_nti_project/profilepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lexend Deca',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const EditTask(),
+      home: const Profilepage(),
     );
   }
 }
@@ -355,82 +355,36 @@ class EditTask extends StatelessWidget {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 30),
-            Text("    In progress"),
-            Text("    Believe you can, and you're halfway there."),
+      body: Center(
+        child: Container(
+          color: MyColors.red,
+          child: DropdownButton<int>(
+            // focusColor: MyColors.red,
+            // dropdownColor: MyColors.green,
+            menuWidth: double.infinity,
+            isExpanded: true,
+            items:
+                countries.map((int value) {
+                  return DropdownMenuItem(
+                    value: value,
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(AssetsIcons.home2),
 
-            DefaulTextform(
-              labelText: 'Task Group',
-              icon: SvgPicture.asset(AssetsIcons.home2),
-            ),
-            DefaulTextform(labelText: 'Task Name'),
-            DefaulTextform(
-              labelText: 'describtion',
-              height: 100,
-              maxLines: null,
-            ),
-            DefaulTextform(
-              labelText: 'Start Date',
-              icon: SvgPicture.asset(AssetsIcons.calender),
-            ),
-            DefaulTextform(
-              labelText: 'End Date',
-              icon: SvgPicture.asset(AssetsIcons.calender),
-            ),
-
-            Container(
-              margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(350, 24),
-                  backgroundColor: MyColors.green,
-                  foregroundColor: MyColors.forground,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                    side: BorderSide(width: 2, color: MyColors.green),
-                  ),
-                ),
-                onPressed: () {},
-                child: Text(
-                  "Mark as Done",
-                  style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w300,
-                    color: MyColors.white,
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 20, right: 20, left: 20),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(400, 24),
-                  backgroundColor: Color(0xffFFFFFF),
-                  foregroundColor: const Color.fromARGB(255, 221, 132, 132),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(14),
-                    side: BorderSide(width: 2, color: MyColors.green),
-                  ),
-                ),
-                onPressed: () {},
-                child: Text(
-                  "UPDATE",
-                  style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.w300,
-                    color: MyColors.green,
-                  ),
-                ),
-              ),
-            ),
-          ],
+                        Column(
+                          children: [Text(" Hello!"), Text(value.toString())],
+                        ),
+                      ],
+                    ),
+                  );
+                }).toList(),
+            onChanged: (value) {},
+          ),
         ),
       ),
     );
   }
 }
+
+// ignore: non_constant_identifier_names
+List<int> countries = [10, 100, 1000];
