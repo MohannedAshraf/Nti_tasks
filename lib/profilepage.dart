@@ -55,10 +55,10 @@ class Profilepage extends StatelessWidget {
                         value: key,
                         child: Row(
                           children: [
-                            Container(
-                              width: 40,
-                              height: 40,
-                              color: MyColors.red,
+                            CircleAvatar(
+                              // width: 40,
+                              // height: 40,
+                              // color: MyColors.red,
                               child: SvgPicture.asset(
                                 AssetsIcons.palastineflag,
                                 width: 40,

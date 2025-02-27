@@ -1,6 +1,7 @@
 import 'package:first_nti_project/assetsicons.dart';
 import 'package:first_nti_project/colors.dart';
-import 'package:first_nti_project/profilepage.dart';
+import 'package:first_nti_project/newtask.dart';
+import 'package:first_nti_project/twoscreens.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Lexend Deca',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const Profilepage(),
+      home: const Screen1(),
     );
   }
 }
